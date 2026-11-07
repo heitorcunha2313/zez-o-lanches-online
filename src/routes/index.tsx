@@ -123,7 +123,6 @@ function Header() {
 }
 
 function Hero() {
-  const { setOpen } = useCart();
   return (
     <section id="inicio" className="relative overflow-hidden bg-hero pt-24 pb-12 md:pt-28 md:pb-20">
       <div className="pointer-events-none absolute -right-40 top-10 h-[34rem] w-[34rem] rounded-full border-2 border-dashed border-gold/15 animate-spin-slow" />
@@ -143,7 +142,6 @@ function Hero() {
             Conheça nosso cardápio, monte seu pedido do seu jeito e envie direto pelo WhatsApp.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start animate-rise [animation-delay:.3s]">
-            <button onClick={() => (document.getElementById("cardapio")?.scrollIntoView(), setTimeout(() => setOpen(false)))} className="hidden" />
             <a href="#cardapio" className="rounded-full bg-fire px-8 py-4 font-display text-xl uppercase text-primary-foreground shadow-fire transition hover:scale-105 active:scale-95">
               Fazer pedido
             </a>
@@ -219,7 +217,7 @@ function Highlights({ onPick }: { onPick: (p: Product) => void }) {
 }
 
 function MenuSection({ onPick }: { onPick: (p: Product) => void }) {
-  const [cat, setCat] = useState(categories[0].id);
+  const [cat, setCat] = useState(categories[0]?.id ?? "");
   return (
     <section id="cardapio" className="scroll-mt-20 bg-card/40 py-16">
       <div className="mx-auto max-w-6xl px-4">
