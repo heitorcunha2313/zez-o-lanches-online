@@ -4,7 +4,8 @@ import { ShoppingBag, Plus, Flame, Star, Menu as MenuIcon, X } from "lucide-reac
 import { Toaster } from "@/components/ui/sonner";
 import heroBurger from "@/assets/hero_burger.png";
 import comboImg from "@/assets/combo_meal.jpg";
-import logo from "@/assets/zezao_logo.jpeg.asset.json";
+import logoSrc from "@/assets/zezao_logo.jpeg";
+const logo = { url: logoSrc };
 import { categories, products, CONTACT, type Product } from "@/data/menu";
 import { brl, whatsappLink } from "@/lib/order";
 import { CartProvider, useCart } from "@/lib/cart";
